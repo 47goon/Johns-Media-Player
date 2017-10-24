@@ -2,22 +2,25 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "xIcon.png",
+      "filename" : "playList.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "xIcon-1.png",
+      "filename" : "playList-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "xIcon-2.png",
+      "filename" : "playList-2.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

@@ -17,12 +17,19 @@
 import UIKit
 import MediaPlayer
 
+protocol playlistAnim{
+    func doAnim()
+}
+
 class ViewController: UITableViewController {
     
     var songs:[String] = [String]()
     
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     var mediaItems: [MPMediaItemCollection]!
+    
+    var delegate: playlistAnim!
+    
     var count = 0
     
     override func viewDidLoad() {
@@ -63,15 +70,20 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let songListView = storyboard.instantiateViewController(withIdentifier: "songList") as! SongListController
         songListView.albumItem = mediaItems[indexPath.row].items
         songListView.albumNameStr = mediaItems[indexPath.row].representativeItem!.albumTitle!
         songListView.albumArtistStr = mediaItems[indexPath.row].representativeItem!.artist!
         songListView.albumImage = mediaItems[indexPath.row].representativeItem!.artwork?.image(at: CGSize(width: 128, height: 128 ))
-//        songListView.albumImage = mediaItems[indexPath.row].representativeItem!.artwork?.image(at: CGSize(width: 128, height: 128  ))
+        
+        songListView.delegate = delegate
+        
         show(songListView, sender: self)
     }
+    
+    
     
     
 }

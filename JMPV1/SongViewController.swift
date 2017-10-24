@@ -25,8 +25,8 @@ class SongViewController: UIViewController {
         imageBG.image = albumIMG
         albumArt.image = albumIMG
         
-        songNameLBL.text! = songItem.title!
-        artistNameLBL.text! = songItem.artist!
+//        songNameLBL.text! = songItem.title!
+//        artistNameLBL.text! = songItem.artist!
     }
 
 }

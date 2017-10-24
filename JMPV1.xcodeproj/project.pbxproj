@@ -10,10 +10,11 @@
 		5245100F1F9CF043003DECC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245100E1F9CF043003DECC5 /* AppDelegate.swift */; };
 		524510111F9CF043003DECC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524510101F9CF043003DECC5 /* ViewController.swift */; };
 		524510141F9CF043003DECC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524510121F9CF043003DECC5 /* Main.storyboard */; };
-		524510161F9CF043003DECC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524510151F9CF043003DECC5 /* Assets.xcassets */; };
 		524510191F9CF043003DECC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524510171F9CF043003DECC5 /* LaunchScreen.storyboard */; };
 		5245103C1F9D3D6B003DECC5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245103B1F9D3D6B003DECC5 /* AlbumCell.swift */; };
 		5245103E1F9D55FC003DECC5 /* SongListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245103D1F9D55FC003DECC5 /* SongListController.swift */; };
+		52F3A5C61F9FD9F700F7AB40 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3A5C51F9FD9F700F7AB40 /* MainScreenViewController.swift */; };
+		52F3A5C81F9FED9600F7AB40 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F3A5C71F9FED9600F7AB40 /* Media.xcassets */; };
 		F6EB20B11F9F8E1E00755495 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB20B01F9F8E1E00755495 /* SongViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +23,12 @@
 		5245100E1F9CF043003DECC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524510101F9CF043003DECC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		524510131F9CF043003DECC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		524510151F9CF043003DECC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524510181F9CF043003DECC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5245101A1F9CF043003DECC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5245103B1F9D3D6B003DECC5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		5245103D1F9D55FC003DECC5 /* SongListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListController.swift; sourceTree = "<group>"; };
+		52F3A5C51F9FD9F700F7AB40 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		52F3A5C71F9FED9600F7AB40 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F6EB20B01F9F8E1E00755495 /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				5245100E1F9CF043003DECC5 /* AppDelegate.swift */,
-				524510151F9CF043003DECC5 /* Assets.xcassets */,
 				524510171F9CF043003DECC5 /* LaunchScreen.storyboard */,
+				52F3A5C71F9FED9600F7AB40 /* Media.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -85,6 +87,7 @@
 			children = (
 				524510101F9CF043003DECC5 /* ViewController.swift */,
 				5245103B1F9D3D6B003DECC5 /* AlbumCell.swift */,
+				52F3A5C51F9FD9F700F7AB40 /* MainScreenViewController.swift */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -149,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524510191F9CF043003DECC5 /* LaunchScreen.storyboard in Resources */,
-				524510161F9CF043003DECC5 /* Assets.xcassets in Resources */,
+				52F3A5C81F9FED9600F7AB40 /* Media.xcassets in Resources */,
 				524510141F9CF043003DECC5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +169,7 @@
 				F6EB20B11F9F8E1E00755495 /* SongViewController.swift in Sources */,
 				5245103E1F9D55FC003DECC5 /* SongListController.swift in Sources */,
 				5245103C1F9D3D6B003DECC5 /* AlbumCell.swift in Sources */,
+				52F3A5C61F9FD9F700F7AB40 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +305,7 @@
 		5245101E1F9CF043003DECC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N376FXKYC8;
 				INFOPLIST_FILE = JMPV1/Info.plist;
@@ -309,6 +313,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnsapps.app.JMPV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,7 +322,7 @@
 		5245101F1F9CF043003DECC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N376FXKYC8;
 				INFOPLIST_FILE = JMPV1/Info.plist;
@@ -325,6 +330,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnsapps.app.JMPV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
