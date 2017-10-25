@@ -33,6 +33,8 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
     var playListBtn = UIButton()
     
     var delegate: playlistAnim!
+    var doneBtn: UIButton!
+    var cancelBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,16 +50,35 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
         
         playListBarBtn.tintColor = .white
         self.navigationItem.setRightBarButtonItems([playListBarBtn], animated: true)
+
+        doneBtn.addTarget(self, action: #selector(doneClick), for: .touchUpInside)
+        cancelBtn.addTarget(self, action: #selector(cancelClick), for: .touchUpInside)
+    }
+    
+    @objc func doneClick(){
+        delegate.playlistSelectionDone(items: playlistItems)
+        cancelClick()
+    }
+    
+    @objc func cancelClick(){
+        UIView.animate(withDuration: 0.5) {[unowned self] in
+            self.navigationController?.isNavigationBarHidden = false
+            self.selectedCells.removeAll()
+            self.playlistItems.removeAll()
+            self.tableView.reloadData()
+            self.inPlaylistMode = false
+            self.delegate.playlistMode(false)
+        }
     }
     
     @objc func customClick(){
-        inPlaylistMode = !inPlaylistMode
-        delegate.doAnim()
-        playListBtn.imageView?.tintColor = inPlaylistMode ? .magenta : .white
-        if (!inPlaylistMode){
-            selectedCells.removeAll()
-            tableView.reloadData()
+        UIView.animate(withDuration: 0.5) {[unowned self] in
+            self.inPlaylistMode = true
+            self.delegate.playlistMode(true)
+            self.navigationController?.isNavigationBarHidden = true
+            self.view.layoutIfNeeded()
         }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,8 +103,10 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
 
             if selectedCells.contains(indexPath){
                 selectedCells.remove(at: selectedCells.index(of: indexPath)!)
+                playlistItems.remove(at: playlistItems.index(of: albumItem[indexPath.row])!)
             }else{
                 selectedCells.append(indexPath)
+                playlistItems.append(albumItem[indexPath.row])
             }
 
             tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)

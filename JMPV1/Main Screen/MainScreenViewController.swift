@@ -10,9 +10,17 @@ import UIKit
 import MediaPlayer
 
 class MainScreenViewController: UIViewController, playlistAnim {
+    
+    var vcNav: UINavigationController!
+    
     @IBOutlet weak var segmentCtrl: UISegmentedControl!
     
     @IBOutlet weak var bottomView: UIView!
+    
+    @IBOutlet weak var playlistViewSign: UIView!
+    
+    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var playlistView: UIView!
@@ -36,17 +44,41 @@ class MainScreenViewController: UIViewController, playlistAnim {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        playlistViewSign.alpha = 0
+        doneBtn.alpha = 0
+        cancelBtn.alpha = 0
 
     }
-    func doAnim() {
-        print("YAY IT WORKS")
+    func playlistMode(_ mode: Bool) {
+        if mode {
+            UIView.animate(withDuration: 0.1) { [unowned self] in
+                self.playlistViewSign.alpha = 1
+                self.doneBtn.alpha = 1
+                self.cancelBtn.alpha = 1
+            }
+        }else{
+            UIView.animate(withDuration: 0.1) { [unowned self] in
+                self.playlistViewSign.alpha = 0
+                self.doneBtn.alpha = 0
+                self.cancelBtn.alpha = 0
+            }
+        }
+        
+    }
+    
+    func playlistSelectionDone(items: [MPMediaItem]) {
+        for item in items{
+            print(item.title)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumNav"{
-            let vcNav = segue.destination as! UINavigationController
+            vcNav = segue.destination as! UINavigationController
             
             let albumNav = vcNav.viewControllers[0] as! ViewController
             albumNav.delegate = self
+            albumNav.doneBtn = doneBtn
+            albumNav.cancelBtn = cancelBtn
         }
     }
 

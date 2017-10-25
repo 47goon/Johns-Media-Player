@@ -18,7 +18,8 @@ import UIKit
 import MediaPlayer
 
 protocol playlistAnim{
-    func doAnim()
+    func playlistMode(_ mode: Bool)
+    func playlistSelectionDone(items: [MPMediaItem])
 }
 
 class ViewController: UITableViewController {
@@ -29,6 +30,8 @@ class ViewController: UITableViewController {
     var mediaItems: [MPMediaItemCollection]!
     
     var delegate: playlistAnim!
+    var doneBtn: UIButton!
+    var cancelBtn: UIButton!
     
     var count = 0
     
@@ -79,6 +82,8 @@ class ViewController: UITableViewController {
         songListView.albumImage = mediaItems[indexPath.row].representativeItem!.artwork?.image(at: CGSize(width: 128, height: 128 ))
         
         songListView.delegate = delegate
+        songListView.doneBtn = doneBtn
+        songListView.cancelBtn = cancelBtn
         
         show(songListView, sender: self)
     }
