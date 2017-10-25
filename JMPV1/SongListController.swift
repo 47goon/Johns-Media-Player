@@ -35,6 +35,7 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
     var delegate: playlistAnim!
     var doneBtn: UIButton!
     var cancelBtn: UIButton!
+    var Player: MPMusicPlayerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +119,8 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
         songListView.songItem = albumItem[indexPath.row]
 
         songListView.albumIMG = albumImage
+        songListView.Player = Player
+        
 
         show(songListView, sender: self)
     }

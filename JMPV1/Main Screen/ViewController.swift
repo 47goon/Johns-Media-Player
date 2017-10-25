@@ -33,6 +33,8 @@ class ViewController: UITableViewController {
     var doneBtn: UIButton!
     var cancelBtn: UIButton!
     
+    var Player: MPMusicPlayerController!
+    
     var count = 0
     
     override func viewDidLoad() {
@@ -84,6 +86,7 @@ class ViewController: UITableViewController {
         songListView.delegate = delegate
         songListView.doneBtn = doneBtn
         songListView.cancelBtn = cancelBtn
+        songListView.Player = Player
         
         show(songListView, sender: self)
     }

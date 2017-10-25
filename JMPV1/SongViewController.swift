@@ -20,13 +20,21 @@ class SongViewController: UIViewController {
     var songItem: MPMediaItem!
     var albumIMG: UIImage!
     
+    var Player: MPMusicPlayerController!
+    
+    @IBAction func stateChanged(_ sender: Any) {
+        print(Player.playbackState)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imageBG.image = albumIMG
         albumArt.image = albumIMG
         
-//        songNameLBL.text! = songItem.title!
-//        artistNameLBL.text! = songItem.artist!
+        Player.nowPlayingItem = songItem
+        Player.play()
+        
+        songNameLBL.text! = songItem.title!
+        artistNameLBL.text! = songItem.artist!
     }
 
 }

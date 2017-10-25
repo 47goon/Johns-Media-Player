@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -423,9 +423,24 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccw-6L-Rra">
+                                            <rect key="frame" x="155" y="522.5" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="6ci-EW-N8p"/>
+                                                <constraint firstAttribute="width" constant="64" id="Yz5-O8-GBj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <state key="normal" title="Play">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="stateChanged:" destination="AlQ-Vz-lCh" eventType="touchUpInside" id="p3l-T4-SGE"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="jV0-sq-IMI" firstAttribute="centerX" secondItem="1YS-qF-wSW" secondAttribute="centerX" id="5LS-Bc-Fh9"/>
+                                        <constraint firstItem="Ccw-6L-Rra" firstAttribute="centerX" secondItem="1YS-qF-wSW" secondAttribute="centerX" id="Bmc-Eg-8CQ"/>
                                         <constraint firstItem="ydG-JS-3Vh" firstAttribute="centerX" secondItem="1YS-qF-wSW" secondAttribute="centerX" id="Mbp-LF-9Vc"/>
                                         <constraint firstItem="ydG-JS-3Vh" firstAttribute="top" secondItem="jV0-sq-IMI" secondAttribute="bottom" id="POf-WF-bTg"/>
                                         <constraint firstItem="jV0-sq-IMI" firstAttribute="top" secondItem="mFM-RY-lDy" secondAttribute="bottom" id="Stq-i0-nkC"/>
@@ -434,6 +449,7 @@
                                         <constraint firstItem="mFM-RY-lDy" firstAttribute="width" secondItem="1YS-qF-wSW" secondAttribute="width" multiplier="0.7" id="gCb-Qh-MBg"/>
                                         <constraint firstItem="ydG-JS-3Vh" firstAttribute="width" secondItem="jV0-sq-IMI" secondAttribute="width" id="jI7-Je-mdT"/>
                                         <constraint firstItem="jV0-sq-IMI" firstAttribute="width" secondItem="mFM-RY-lDy" secondAttribute="width" id="vyj-kP-0Bg"/>
+                                        <constraint firstItem="Ccw-6L-Rra" firstAttribute="top" secondItem="ydG-JS-3Vh" secondAttribute="bottom" constant="20" id="w6e-eG-1QC"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>

@@ -25,6 +25,8 @@ class MainScreenViewController: UIViewController, playlistAnim {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var playlistView: UIView!
     
+    var player: MPMusicPlayerController!
+    
     @IBAction func segmentChanged(_ sender: Any) {
         self.view.bringSubview(toFront: bottomView)
         switch segmentCtrl.selectedSegmentIndex {
@@ -47,7 +49,8 @@ class MainScreenViewController: UIViewController, playlistAnim {
         playlistViewSign.alpha = 0
         doneBtn.alpha = 0
         cancelBtn.alpha = 0
-
+        
+        player = MPMusicPlayerController.applicationMusicPlayer
     }
     func playlistMode(_ mode: Bool) {
         if mode {
@@ -68,7 +71,7 @@ class MainScreenViewController: UIViewController, playlistAnim {
     
     func playlistSelectionDone(items: [MPMediaItem]) {
         for item in items{
-            print(item.title)
+            print((item.title)!)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,6 +82,7 @@ class MainScreenViewController: UIViewController, playlistAnim {
             albumNav.delegate = self
             albumNav.doneBtn = doneBtn
             albumNav.cancelBtn = cancelBtn
+            albumNav.Player = player
         }
     }
 
