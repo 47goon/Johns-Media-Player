@@ -20,6 +20,7 @@ import MediaPlayer
 protocol playlistAnim{
     func playlistMode(_ mode: Bool)
     func playlistSelectionDone(items: [MPMediaItem])
+    func updateBottomView(albumArt: UIImage, songName: String, artistName: String, songItem: MPMediaItem)
 }
 
 class ViewController: UITableViewController {

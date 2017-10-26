@@ -101,7 +101,6 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (inPlaylistMode){
-
             if selectedCells.contains(indexPath){
                 selectedCells.remove(at: selectedCells.index(of: indexPath)!)
                 playlistItems.remove(at: playlistItems.index(of: albumItem[indexPath.row])!)
@@ -116,11 +115,14 @@ class SongListController: UIViewController, UITableViewDelegate, UITableViewData
         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let songListView = storyboard.instantiateViewController(withIdentifier: "songView") as! SongViewController
         
-        songListView.songItem = albumItem[indexPath.row]
+        songListView.songIndex = indexPath.row
+        songListView.albumItem = albumItem
 
         songListView.albumIMG = albumImage
         songListView.Player = Player
         
+        //TODO: Make it so I only send songItem, Quick fix for slider rn
+        delegate.updateBottomView(albumArt: albumImage, songName: albumItem[indexPath.row].title!, artistName: albumItem[indexPath.row].artist!, songItem: albumItem[indexPath.row])
 
         show(songListView, sender: self)
     }
