@@ -13,6 +13,7 @@ class Playlist: NSObject, NSCoding {
     
     var title: String
     var items: [MPMediaItem]
+    var unknownItems: [[String:String]]?
     
     init(title: String, items: [MPMediaItem]) {
         self.title = title

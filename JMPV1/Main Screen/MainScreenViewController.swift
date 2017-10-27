@@ -158,6 +158,21 @@ class MainScreenViewController: UIViewController, playlistAnim, PlaylistCreation
         
     }
     
+    func addUnknownToPlaylist(playlistTitle: String, playListMissing: [[String:String]]) {
+        let check = self.playLists.filter({ $0.title == playlistTitle })
+        if check.count > 0{
+            let indexTest = self.playLists.index(where: { (p) -> Bool in
+                p.title == check[0].title
+            })
+            if let indexFinal = indexTest {
+                self.playLists[indexFinal].unknownItems?.append(contentsOf: playListMissing)
+                playListDelegate?.updatePlaylists(playLists: playLists)
+            }
+        }else{
+            return
+        }
+    }
+    
     @objc func updateSlider(){
         progressSlider.value = Float(player.currentPlaybackTime)
         if (player.nowPlayingItem?.title! != bvSongName.text!){

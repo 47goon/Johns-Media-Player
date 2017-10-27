@@ -43,16 +43,17 @@ class PlaylistViewController: UITableViewController, PlaylistDelegate {
         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let songListView = storyboard.instantiateViewController(withIdentifier: "playlistAlbumView") as! PlaylistSongViewController
         songListView.songs = playlists[indexPath.row].items
+        if let unknown = playlists[indexPath.row].unknownItems {
+            songListView.unknownSongs = unknown
+        }
+       
         songListView.title = playlists[indexPath.row].title
         
         songListView.delegate = delegate
         songListView.player = player
         navigationController?.pushViewController(songListView, animated: true)
     }
-    
-    @objc func shareTapped(){
-        
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

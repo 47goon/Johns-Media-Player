@@ -12,6 +12,9 @@ import MediaPlayer
 class PlaylistSongViewController: UITableViewController {
     
     var songs: [MPMediaItem]!
+    var unknownSongs: [[String:String]]?
+    
+    
     var delegate: playlistAnim!
     var player: MPMusicPlayerController!
 
@@ -32,13 +35,16 @@ class PlaylistSongViewController: UITableViewController {
             print("GUARD FAILED")
             return
         }
-        print(NSDictionary(contentsOf: url))
+
         let vc = UIActivityViewController(activityItems: ["Check out this playlist.", url], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if unknownSongs != nil {
+            return 2
+        }
         return 1
     }
     
@@ -46,11 +52,23 @@ class PlaylistSongViewController: UITableViewController {
         return 75
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return (unknownSongs?.count)!
+        }
         return songs.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "unknownCell", for: indexPath) as! AlbumCell
+            cell.albumArtView.image = UIImage(named: "pauseBtn")
+            cell.albumTitle.text! = unknownSongs![indexPath.row]["album"]!
+            cell.artistTitle.text! = unknownSongs![indexPath.row]["artist"]!
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! AlbumCell
         cell.albumArtView.image = (songs[indexPath.row].artwork?.image(at: CGSize(width: 128, height: 128)))!
         cell.albumTitle.text! = songs[indexPath.row].title! // Song title for playlist view...

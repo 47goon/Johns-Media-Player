@@ -11,6 +11,7 @@ import MediaPlayer
 
 protocol PlaylistCreationDelegate{
     func addPlaylist(playlist: Playlist)
+    func addUnknownToPlaylist(playlistTitle: String, playListMissing: [[String:String]])
 }
 
 class PlaylistCreatorController: UITableViewController {
