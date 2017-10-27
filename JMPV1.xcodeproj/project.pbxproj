@@ -20,6 +20,7 @@
 		5245103C1F9D3D6B003DECC5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245103B1F9D3D6B003DECC5 /* AlbumCell.swift */; };
 		5245103E1F9D55FC003DECC5 /* SongListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245103D1F9D55FC003DECC5 /* SongListController.swift */; };
 		52F3A5C61F9FD9F700F7AB40 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3A5C51F9FD9F700F7AB40 /* MainScreenViewController.swift */; };
+		52F7883A1FA2B3D60098AF35 /* PlaylistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F788391FA2B3D60098AF35 /* PlaylistParser.swift */; };
 		F6EB20B11F9F8E1E00755495 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB20B01F9F8E1E00755495 /* SongViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		5245103B1F9D3D6B003DECC5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		5245103D1F9D55FC003DECC5 /* SongListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListController.swift; sourceTree = "<group>"; };
 		52F3A5C51F9FD9F700F7AB40 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		52F788391FA2B3D60098AF35 /* PlaylistParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistParser.swift; sourceTree = "<group>"; };
 		F6EB20B01F9F8E1E00755495 /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				5200C5AF1FA15AEA0013694B /* PlaylistSongViewController.swift */,
 				5200C5A91FA13D320013694B /* PlaylistItem.swift */,
 				5200C5AB1FA13FA20013694B /* Playlist.swift */,
+				52F788391FA2B3D60098AF35 /* PlaylistParser.swift */,
 			);
 			path = Playlists;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				5200C5AE1FA14AD10013694B /* PlaylistViewController.swift in Sources */,
 				5245103C1F9D3D6B003DECC5 /* AlbumCell.swift in Sources */,
 				5200C5AA1FA13D320013694B /* PlaylistItem.swift in Sources */,
+				52F7883A1FA2B3D60098AF35 /* PlaylistParser.swift in Sources */,
 				52F3A5C61F9FD9F700F7AB40 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

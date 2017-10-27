@@ -17,7 +17,25 @@ class PlaylistSongViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let shareBarBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
+        shareBarBtn.tintColor = .white
+        self.navigationItem.setRightBarButtonItems([shareBarBtn], animated: true)
 
+    }
+    
+    @objc func shareTapped(){
+        let playlist = Playlist(title: self.title ?? "Playlist", items: songs)
+        guard let url = playlist.exportToFileURL() else {
+            print("GUARD FAILED")
+            return
+        }
+        print(NSDictionary(contentsOf: url))
+        let vc = UIActivityViewController(activityItems: ["Check out this playlist.", url], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

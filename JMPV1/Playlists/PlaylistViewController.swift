@@ -50,6 +50,9 @@ class PlaylistViewController: UITableViewController, PlaylistDelegate {
         navigationController?.pushViewController(songListView, animated: true)
     }
     
+    @objc func shareTapped(){
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

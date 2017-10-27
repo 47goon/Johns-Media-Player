@@ -65,6 +65,7 @@ class MainScreenViewController: UIViewController, playlistAnim, PlaylistCreation
         
         progressSlider.value = 0
         
+        PlaylistParser.delegate = self
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(sliderTapped(gestureRecognizer:)))
         self.progressSlider.addGestureRecognizer(tapGestureRecognizer)
