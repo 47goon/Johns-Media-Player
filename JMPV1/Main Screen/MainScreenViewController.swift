@@ -165,7 +165,7 @@ class MainScreenViewController: UIViewController, playlistAnim, PlaylistCreation
                 p.title == check[0].title
             })
             if let indexFinal = indexTest {
-                self.playLists[indexFinal].unknownItems?.append(contentsOf: playListMissing)
+                self.playLists[indexFinal].unknownItems = playListMissing
                 playListDelegate?.updatePlaylists(playLists: playLists)
             }
         }else{

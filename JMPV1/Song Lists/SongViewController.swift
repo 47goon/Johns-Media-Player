@@ -27,8 +27,11 @@ class SongViewController: UIViewController {
     var albumSlice: ArraySlice<MPMediaItem>!
     
     @objc func updateView(_ n: Notification){
-        songNameLBL.text! = (Player.nowPlayingItem?.title!)!
-        artistNameLBL.text! = (Player.nowPlayingItem?.artist!)!
+        if let songTitle = Player.nowPlayingItem?.title, let artistTitle = Player.nowPlayingItem?.artist{
+            songNameLBL.text! = songTitle
+            artistNameLBL.text! = artistTitle
+        }
+        
         
         let img = Player.nowPlayingItem?.artwork?.image(at: CGSize(width: 128, height: 128))
         imageBG.image = img
